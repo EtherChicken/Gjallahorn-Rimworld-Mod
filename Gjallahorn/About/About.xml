@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModMetaData>
+	<name>Gjallahorn</name>
+	<author>frostyfrozone</author>
+    <packageId>frostyfrozone.Gjallahorn</packageId>
+	<supportedVersions>
+		<li>1.2</li>
+	</supportedVersions>
+	<description>Gjaal</description>
+	<url>https://steamcommunity.com/profiles/76561198080576765/myworkshopfiles/?appid=294100</url>
+</ModMetaData>
