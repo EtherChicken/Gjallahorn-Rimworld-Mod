@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+ 
+<Defs>
+
+   <ThingDef  ParentName="BaseBullet">
+    <defName>ETH_Gjallarhorn_Bullet</defName>
+    <label>Heavy Ammo</label>
+    <graphicData>
+      <texPath>Things/Projectile/Rocket_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <color>(254,189,58)</color>
+    </graphicData>
+	<thingClass>Projectile_DoomsdayRocket</thingClass>
+	<modExtensions>
+	</modExtensions>
+    <projectile>
+      <speed>80</speed>
+      <damageDef>Bomb</damageDef>
+	  <damageAmountBase>30</damageAmountBase>
+      <explosionRadius>7</explosionRadius>
+      <ai_IsIncendiary>false</ai_IsIncendiary>
+      <arcHeightFactor>0.2</arcHeightFactor>
+      <shadowSize>0.6</shadowSize>
+    </projectile>
+  </ThingDef>
+  
+  
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>ETH_Gjallarhorn</defName>
+    <label>Gjallarhorn Shoulder Mounted Rocket Launcher</label>
+    <description>A mystical exotic weapon made from the armors of fallen heroes known as guardians.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/Gjally</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+   <!--  <soundCast>InfernoCannon_Fire</soundCast> -->
+    <generateCommonality>0.3</generateCommonality>
+    <statBases>
+      <WorkToMake>20000</WorkToMake>
+      <Mass>6</Mass>
+      <RangedWeapon_Cooldown>5</RangedWeapon_Cooldown>
+    </statBases>
+	<tickerType>Normal</tickerType>
+    <costList>
+      <Steel>1000</Steel>
+      <ComponentIndustrial>10</ComponentIndustrial>
+	  <Plasteel>20</Plasteel>
+    </costList>
+    <recipeMaker>
+	<researchPrerequisite>GasOperation</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>10</Crafting>
+      </skillRequirements>
+    </recipeMaker>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>ETH_Gjallarhorn_Bullet</defaultProjectile>
+        <warmupTime>3.5</warmupTime>
+        <range>30</range>
+        <forcedMissRadius>1.9</forcedMissRadius>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>Shot_IncendiaryLauncher</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+    <tools>
+	  
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+	<comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>7.8</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+      </li>
+      <li Class="CompProperties_BiocodableWeapon"/>
+    </comps>
+  </ThingDef>
+</Defs>
